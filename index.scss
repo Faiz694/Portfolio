@@ -1,0 +1,281 @@
+$nav-color: #0089b7;
+$super-color: #003d62;
+$project-bg: #003251;
+$secondary: #fff700;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+html {
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  color: white;
+}
+body {
+  font-size: 1.4rem;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  // padding: 0 2rem;
+}
+header {
+  background: $nav-color;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    li {
+      font-size: 1.8rem;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: cyan;
+        font-size: 2rem;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+  }
+}
+
+// hero section start
+#hero {
+  background: $super-color;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .hero-image {
+    filter: drop-shadow(0 0 10px black);
+    border-radius: 50%;
+    box-shadow: 2px 2px 0px cyan, 0px 0px 4px red,
+      -2px -2px 0px rgb(255, 255, 0);
+
+    &:hover {
+      box-shadow: 2px 2px 9px cyan, -2px -2px 9px yellow;
+    }
+  }
+  .hero-content {
+    display: grid;
+    place-items: center;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+
+    .hi-text {
+      font-size: 6rem;
+      font-weight: bold;
+      color: $secondary;
+    }
+
+    .name-text {
+      font-size: 5rem;
+      font-weight: 700;
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(244, 223, 136);
+
+    overflow: hidden; // Ensure the content is not revealed until the animation
+    border-right: 0.15em solid orange; // the typewriter cursor
+    white-space: nowrap; // keeps the content on a single line
+    margin: 0 auto; // Gives that scrolling effect as the typing happens
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
+
+//project section
+
+#project {
+  background: $project-bg;
+  padding-bottom: 9rem;
+
+  h2 {
+    font-size: 6rem;
+    text-align: center;
+    margin: 2rem 0;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .project_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+  }
+
+  .grid_item {
+    display: grid;
+    place-items: center;
+  }
+
+  .card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 0px 0px none;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.8s ease-in-out;
+      box-shadow: 6px 7px 9px rgb(3, 196, 255), -6px -7px 9px cyan;
+
+      img {
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out;
+        opacity: 0.8;
+      }
+
+      .card_content {
+        background: white;
+        color: $super-color;
+        transform: translateY(0px);
+      }
+    }
+
+    .card_content {
+      padding: 2rem;
+      position: relative;
+      top: -6.5rem;
+      margin-bottom: -6.5rem;
+      transition: 0.5s ease-in-out;
+      transform: translateY(100px);
+
+      h3 {
+        text-align: center;
+        font-size: 3rem;
+      }
+    }
+  }
+  img {
+    max-width: 320px;
+    height: 22rem;
+  }
+}
+
+// contact section
+#contact {
+  margin-top: 7rem;
+  h2 {
+    font-size: 7rem;
+    color: #000000;
+    text-align: center;
+  }
+
+  .contact_way1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13rem;
+    gap: 7rem;
+  }
+
+  .contact_way2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 7rem;
+    padding-left: 13rem;
+  }
+
+  .linkdin {
+    width: 20rem;
+  }
+  img {
+    width: 7rem;
+  }
+}
+
+//footer
+footer {
+  background: #012841;
+  padding: 2rem;
+  margin-top: 18rem;
+
+  h6 {
+    text-align: center;
+  }
+}
+
+// media query
+@media (max-width: 786px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 32%;
+  }
+  #hero .container {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  #hero .hero-content {
+    margin-top: 5rem;
+  }
+}
+
+// animation for type writer
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
