@@ -73,6 +73,9 @@ header {
   padding-top: 4rem;
   padding-bottom: 6rem;
 
+  img{
+    width: 400px;
+  }
   .container {
     display: flex;
     align-items: center;
@@ -258,6 +261,9 @@ footer {
   }
   #hero .hero-content {
     margin-top: 5rem;
+  }
+  #hero img{
+    width: 350px;
   }
 }
 
