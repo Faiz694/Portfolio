@@ -63,6 +63,9 @@ header nav .logo {
   padding-top: 4rem;
   padding-bottom: 6rem;
 }
+#hero img{
+  width: 400px;
+}
 #hero .container {
   display: flex;
   align-items: center;
@@ -222,6 +225,9 @@ footer h6 {
   }
   #hero .hero-content {
     margin-top: 5rem;
+  }
+  #hero img{
+    width: 350px;
   }
 }
 @keyframes typing {
